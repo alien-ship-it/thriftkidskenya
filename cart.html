@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart – ThriftKids Kenya</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="cart-page">
+  <!-- Cart Logic -->
+  <script>
+  window.productData = {
+        product1: { name: 'Cool Denim Jacket',  price: 600,  img: 'images/featured3.jpg', url: 'product1.html' },
+        product2: { name: 'Striped T-Shirt',    price: 350,  img: 'images/featured4.jpg', url: 'product2.html' },
+        product3: { name: 'Plaid Shirt',        price: 650,  img: 'images/featured5.jpg', url: 'product3.html' },
+        product4: { name: 'Casual Shorts',      price: 350,  img: 'images/featured6.jpg', url: 'product4.html' },
+        product5: { name: 'Skinny Jeans',       price: 500,  img: 'images/featured7.jpg', url: 'product5.html' },
+        product6: { name: 'Hooded Jacket',      price: 500,  img: 'images/featured8.jpg', url: 'product6.html' },
+        product7: { name: 'Tennis Skirt',       price: 600,  img: 'images/featured9.jpg', url: 'product7.html' },
+        product8: { name: 'Pink Polka Dress',   price: 600,  img: 'images/featured1.jpg', url: 'product8.html' },
+        product9: { name: 'Casual Boys Set',    price: 900,  img: 'images/featured2.jpg', url: 'product9.html' },
+        product10: { name: 'Floral Dress',      price: 750,  img: 'images/best2.jpg',     url: 'product10.html' },
+        product11: { name: 'Denim Overalls',    price: 400,  img: 'images/best3.jpg',     url: 'product11.html' },
+        product12: { name: 'Graphic Tee',       price: 350,  img: 'images/best4.jpg',     url: 'product12.html' },
+        product13: { name: 'Cargo Pants',       price: 500,  img: 'images/best5.jpg',     url: 'product13.html' },
+        product14: { name: 'Leather Jacket',    price: 600,  img: 'images/best6.jpg',     url: 'product14.html' },
+        product15: { name: 'Raincoat',          price: 900,  img: 'images/best7.jpg',     url: 'product15.html' },
+        product16: { name: 'Sweatpants',       price:  400,  img: 'images/best1.jpg',     url: 'product16.html' }
+    // Add all your product IDs with correct names, prices, images, and URLs
+  };
+</script>
+  <!-- Header (same as other pages) -->
+  <header>
+    <div class="header-container">
+      <div class="logo">ThriftKids Kenya</div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cart-icon">
+        🛒 <span id="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart Section -->
+  <section class="product-detail">
+    <div class="container">
+      <h1>Your Shopping Cart</h1>
+      <table id="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price (KSh)</th>
+            <th>Qty</th>
+            <th>Subtotal</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JS will inject rows here -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" style="text-align: right; font-weight: bold;">Total:</td>
+            <td id="cart-total" style="font-weight: bold;">0</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+      <div style="margin-top: 2rem; text-align: center;">
+        <button id="checkout-btn" class="view-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+  <div class="footer-content">
+    <div class="quick-links">
+      <!-- … your quick links … -->
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="social-icons">
+      <h4>Follow Us</h4>
+      <a href="https://www.instagram.com/thriftkids_kenya" target="_blank" aria-label="Instagram">
+        <!-- Instagram SVG -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5z"/>
+          <path d="M12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7z"/>
+          <circle cx="17.5" cy="6.5" r="1.5"/>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/share/1E832mYLMh/" target="_blank" aria-label="Facebook">
+        <!-- Facebook SVG -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 5.01 3.658 9.158 8.438 9.88v-6.99H7.898v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.99C18.342 21.158 22 17.01 22 12z"/>
+        </svg>
+      </a>
+      <a href="tel:+254711161050" aria-label="Phone">
+        <!-- Phone SVG -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.62 10.79a15.09 15.09 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.21 1.11l-2.24 2.12z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="footer-note">
+    &copy; 2025 ThriftKids Kenya. All rights reserved.
+  </div>
+</footer>
+
+<script src="js/cart.js"></script>
+
+</body>
+</html>

@@ -2,92 +2,317 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop | Thrift Kids Kenya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | ThriftKids Kenya</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-  <header class="navbar">
-    <div class="logo">Thrift Kids Kenya</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="shop.html" class="active">Shop</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </header>
+<body class="shop-page">
 
-  <main class="shop-page">
-    <h1>Our Collection</h1>
-
-    <!-- Filter Buttons -->
-    <div class="filter-buttons">
-      <button onclick="filterProducts('all')">All</button>
-      <button onclick="filterProducts('girls')">Girls</button>
-      <button onclick="filterProducts('boys')">Boys</button>
-    </div>
-
-    <!-- Product Grid -->
-    <div class="shop-grid" id="productGrid">
-      <!-- Product 1 - Girls -->
-      <a href="product.html" class="product-card" data-gender="girls">
-        <img src="images/featured1.jpg" alt="Pink Polka Dress">
-        <h3>Pink Polka Dress</h3>
-        <p>KSh 850</p>
-      </a>
-
-      <!-- Product 2 - Boys -->
-      <a href="product-casual-boys.html" class="product-card" data-gender="boys">
-        <img src="images/featured2.jpg" alt="Casual Boys Set">
-        <h3>Casual Boys Set</h3>
-        <p>KSh 1,200</p>
-      </a>
-
-      <!-- Product 3 - All -->
-      <a href="product-sweatpants.html" class="product-card" data-gender="girls">
-        <img src="images/best1.jpg" alt="sweatpants">
-        <h3>sweatpants</h3>
-        <p>KSh 550</p>
-      </a>
-
-      <!-- Product 4 - Boys -->
-      <a href="product-hoodie.html" class="product-card" data-gender="boys">
-        <img src="images/best2.jpg" alt="Street Style Hoodie">
-        <h3>Street Style Hoodie</h3>
-        <p>KSh 950</p>
+  <!-- HEADER -->
+ <header>
+  <div class="header-container">
+    <div class="logo">ThriftKids Kenya</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Cart Icon -->
+    <div class="cart-icon">
+      <a href="cart.html">
+        🛒 <span id="cart-count">0</span>
       </a>
     </div>
+  </div>
+</header>
+
+  <!-- SHOP HERO -->
+  <section class="hero-section shop-hero">
+    <div class="hero-content">
+      <h1>Shop All Products</h1>
+    </div>
+  </section>
+
+  <!-- SHOP MAIN CONTENT -->
+  <main class="shop-container">
+    <!-- SIDEBAR FILTER -->
+    <aside class="shop-sidebar">
+  <h3>Filter by Category</h3>
+  <ul class="category-filter">
+    <li><a href="#" data-category="all" class="active">All</a></li>
+    <li><a href="#" data-category="boys">Boys</a></li>
+    <li><a href="#" data-category="girls">Girls</a></li>
+  </ul>
+</aside>
+
+    <!-- PRODUCT GRID -->
+    <section class="shop-products">
+      <div class="product-grid">
+        <!-- Repeatable Product Card -->
+        <div class="product-card" data-category="boys" data-id="product1">
+          <img src="images/featured3.jpg" alt="1">
+          <h3>Cool Denim Jacket</h3>
+          <p class="price">KSh 600</p>
+        <div class="btn-group">
+          <a href="product1.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product1">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="boys" data-id="product2">
+          <img src="images/featured4.jpg" alt="1">
+          <h3>Striped T-Shirt</h3>
+          <p class="price">KSh 350</p>
+        <div class="btn-group">
+          <a href="product2.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product2">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="boys" data-id="product3">
+          <img src="images/featured5.jpg" alt="1">
+          <h3>Plaid Shirt</h3>
+          <p class="price">KSh 650</p>
+        <div class="btn-group">
+          <a href="product3.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product3">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="boys" data-id="product4">
+          <img src="images/featured6.jpg" alt="1">
+          <h3>Casual Shorts</h3>
+          <p class="price">KSh 350</p>
+        <div class="btn-group">
+          <a href="product4.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product4">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="girls" data-id="product5">
+          <img src="images/featured7.jpg" alt="1">
+          <h3>Skinny Jeans</h3>
+          <p class="price">KSh 500</p>
+        <div class="btn-group">
+          <a href="product5.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product5">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="boys" data-id="product6">
+          <img src="images/featured8.jpg" alt="1">
+          <h3>Hooded Jacket</h3>
+          <p class="price">KSh 500</p>
+        <div class="btn-group">
+          <a href="product6.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product6">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="girls" data-id="product7">
+          <img src="images/featured9.jpg" alt="1">
+          <h3>Tennis Skirt</h3>
+          <p class="price">KSh 600</p>
+        <div class="btn-group">
+          <a href="product7.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product7">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="girls" data-id="product8">
+          <img src="images/featured1.jpg" alt="1">
+          <h3>Pink Polka Dress</h3>
+          <p class="price">KSh 600</p>
+        <div class="btn-group">
+          <a href="product8.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product8">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="boys" data-id="product9">
+          <img src="images/featured2.jpg" alt="1">
+          <h3>Casual Boys Set</h3>
+          <p class="price">KSh 900</p>
+        <div class="btn-group">
+          <a href="product9.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product9">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="girls" data-id="product10">
+          <img src="images/best2.jpg" alt="1">
+          <h3>Floral Dress</h3>
+          <p class="price">KSh 350</p>
+        <div class="btn-group">
+          <a href="product10.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product10">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="boys" data-id="product11">
+          <img src="images/best3.jpg" alt="1">
+          <h3>Denim Overalls</h3>
+          <p class="price">KSh 400</p>
+        <div class="btn-group">
+          <a href="product11.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product11">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="boys" data-id="product12">
+          <img src="images/best4.jpg" alt="1">
+          <h3>Graphic Tee</h3>
+          <p class="price">KSh 350</p>
+        <div class="btn-group">
+          <a href="product12.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product12">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="boys" data-id="product13">
+          <img src="images/best5.jpg" alt="1">
+          <h3>Cargo Pants</h3>
+          <p class="price">KSh 500</p>
+        <div class="btn-group">
+          <a href="product13.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product13">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="boys" data-id="product14">
+          <img src="images/best6.jpg" alt="1">
+          <h3>Leather Jacket</h3>
+          <p class="price">KSh 600</p>
+        <div class="btn-group">
+          <a href="product14.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product14">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="girls" data-id="product15">
+          <img src="images/best7.jpg" alt="1">
+          <h3>Raincoat</h3>
+          <p class="price">KSh 900</p>
+        <div class="btn-group">
+          <a href="product15.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product15">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="girls" data-id="product16">
+          <img src="images/best1.jpg" alt="1">
+          <h3>Sweatpants</h3>
+          <p class="price">KSh 400</p>
+        <div class="btn-group">
+          <a href="product16.html" class="view-btn">View</a>
+          <button class="add-cart-btn" data-id="product16">Add to Cart</button>
+        </div>
+        </div>
+
+        <!-- ADD MORE PRODUCT CARDS HERE... -->
+
+      </div>
+
+      <!-- LOAD MORE BUTTON -->
+      <div class="load-more-container">
+       <button id="loadMoreBtn">Load More</button>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="quick-links">
+  <!-- FOOTER -->
+  <footer>
+  <div class="footer-content">
+    <div class="quick-links">
+      <!-- … your quick links … -->
         <h4>Quick Links</h4>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="contact-info">
-        <h4>Contact</h4>
-        <p>Email: support@thriftkids.co.ke</p>
-        <p>Phone: +254 720 456 678</p>
-      </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
     </div>
-    <div class="copyright">
-      &copy; 2025 Thrift Kids Kenya. All rights reserved.
+    <div class="social-icons">
+      <h4>Follow Us</h4>
+      <a href="https://www.instagram.com/thriftkids_kenya" target="_blank" aria-label="Instagram">
+        <!-- Instagram SVG -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5z"/>
+          <path d="M12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7z"/>
+          <circle cx="17.5" cy="6.5" r="1.5"/>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/share/1E832mYLMh/" target="_blank" aria-label="Facebook">
+        <!-- Facebook SVG -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 5.01 3.658 9.158 8.438 9.88v-6.99H7.898v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.99C18.342 21.158 22 17.01 22 12z"/>
+        </svg>
+      </a>
+      <a href="tel:+254711161050" aria-label="Phone">
+        <!-- Phone SVG -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.62 10.79a15.09 15.09 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.21 1.11l-2.24 2.12z"/>
+        </svg>
+      </a>
     </div>
-  </footer>
+  </div>
+  <div class="footer-note">
+    &copy; 2025 ThriftKids Kenya. All rights reserved.
+  </div>
+</footer>
 
-  <!-- Filter Script -->
-  <script>
-    function filterProducts(gender) {
-      const cards = document.querySelectorAll(".product-card");
-      cards.forEach(card => {
-        const isMatch = card.dataset.gender === gender || gender === "all";
-        card.style.display = isMatch ? "block" : "none";
-      });
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. References
+  const loadMoreBtn   = document.getElementById('loadMoreBtn');
+  const filterLinks   = document.querySelectorAll('.category-filter a');
+  const allCards      = Array.from(document.querySelectorAll('.product-card'));
+  let filteredCards   = [...allCards];
+  let currentVisible  = 6;
+
+  // 2. Our display updater: shows first N of filteredCards, hides the rest
+  function updateDisplay() {
+    filteredCards.forEach((card, idx) => {
+      card.style.display = idx < currentVisible ? 'flex' : 'none';
+    });
+    // Hide any cards not in filteredCards
+    const visibleSet = new Set(filteredCards);
+    allCards.forEach(card => {
+      if (!visibleSet.has(card)) card.style.display = 'none';
+    });
+    // Show or hide the Load More button
+    loadMoreBtn.style.display = (currentVisible < filteredCards.length) ? 'inline-block' : 'none';
+  }
+
+  // 3. Our filter function: pick a category, highlight its link, reset paging
+  function filterByCategory(category) {
+    // Highlight link
+    filterLinks.forEach(link => {
+      link.classList.toggle('active', link.dataset.category === category);
+    });
+    // Build the filtered list
+    if (category === 'all') {
+      filteredCards = [...allCards];
+    } else {
+      filteredCards = allCards.filter(card => card.dataset.category === category);
     }
-  </script>
+    // Reset how many to show
+    currentVisible = 6;
+    // Update the grid
+    updateDisplay();
+  }
+
+  // 4. Wire up clicks on the sidebar links
+  filterLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      filterByCategory(link.dataset.category);
+    });
+  });
+
+  // 5. Wire up Load More
+  loadMoreBtn.addEventListener('click', () => {
+    currentVisible += 6;
+    updateDisplay();
+  });
+
+  // 6. Read the URL ?category=... on page load
+  const params = new URLSearchParams(window.location.search);
+  const initialCategory = params.get('category') || 'all';
+  filterByCategory(initialCategory);
+});
+</script>
+
+<script src="js/cart.js"></script>
+
 </body>
 </html>

@@ -1,57 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Thrift Kids Kenya</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <style>
-
-    .about-container {
-      max-width: 800px;
-      background-color: rgba(255, 255, 255, 0.65);
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-      text-align: center;
-    }
-
-    .about-container h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-
-    .about-container p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #444;
-      margin-bottom: 1.5rem;
-    }
-
-    .highlighted-quote {
-      font-style: italic;
-      font-weight: bold;
-      color: #555;
-      border-left: 4px solid #0077cc;
-      padding-left: 1rem;
-    }
-
-    .about-img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-top: 2rem;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargo Pants – ThriftKids Kenya</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- Navbar -->
-<header>
+  <!-- Header -->
+  <header>
   <div class="header-container">
     <div class="logo">ThriftKids Kenya</div>
     <nav class="main-nav">
@@ -71,23 +28,29 @@
   </div>
 </header>
 
-  <!-- About Section -->
-  <section class="about-hero">
-    <div class="about-container" data-aos="fade-up">
-      <h1>About Thrift Kids Kenya</h1>
-      <p>
-        Thrift Kids Kenya is a trendy online thrift store focused on stylish and affordable clothing for babies, children, and teens. Our goal is simple — help parents dress their kids in quality, cute, and budget-friendly outfits.
-      </p>
-      <p>
-        Whether you're shopping for a birthday, everyday wear, or something unique, we've got you covered. Our curated collection blends urban streetwear with playful charm, and most of our pieces are sourced with love and care.
-      </p>
-      <p>
-        We’re not just about clothes — we’re about confidence, creativity, and conscious fashion. Every piece you buy supports sustainability by giving pre-loved outfits a new home.
-      </p>
-      <p class="highlighted-quote">
-        “Dressing up your little ones shouldn't cost a fortune — it should spark joy.”
-      </p>
-      <img src="images/about.jpg" alt="Kids Fashion" class="about-img" data-aos="fade-up" data-aos-delay="200"/>
+  <!-- Product Detail Section -->
+  <section class="product-detail">
+    <div class="container">
+      <!-- Product Image -->
+      <div class="product-images">
+        <img src="images/best5.jpg" alt="Cargo Pants">
+      </div>
+
+      <!-- Product Info -->
+      <div class="product-info" data-id="product13">
+        <h1>Cargo Pants</h1>
+        <p class="price">KSh 500</p>
+        <p class="description">
+         Built for adventure. These cargo pants feature multiple pockets, a comfy fit, and durable fabric—perfect for active kids on the move. 
+         Whether it's playtime, school, or weekend fun, they bring both style and function to every outfit.
+        </p>
+
+        <!-- Quantity -->
+      <div class="product-options">
+        <label for="qty">Quantity:</label>
+        <input type="number" id="qty" class="qty-input" value="1" min="1" style="width:60px;"/>
+        <button class="add-cart-btn" data-id="product13">Add to Cart</button>
+       </div>
     </div>
   </section>
 
@@ -133,11 +96,7 @@
   </div>
 </footer>
 
-  <script>
-    AOS.init();
-  </script>
+<script src="js/cart.js"></script>
 
-   <script src="js/cart.js"></script>
-   
 </body>
 </html>
