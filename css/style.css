@@ -1139,3 +1139,25 @@ body {
     padding: 1.5rem;
   }
 }
+/* ── Shop Page: Make card backgrounds more opaque so text pops ── */
+.shop-page .product-card {
+  background: rgba(255, 255, 255, 0.80) !important;
+}
+
+/* ── Mobile Carousel: breathing room but no peek ── */
+@media (max-width: 768px) {
+  .product-carousel {
+    display: flex;                     /* ensure flex layout */
+    overflow-x: auto;                  /* horizontal scroll */
+    scroll-snap-type: x mandatory;     /* force snap behavior */
+    -webkit-overflow-scrolling: touch; /* smooth on iOS */
+    padding: 0;                        /* remove container padding */
+  }
+
+  .product-carousel .product-card {
+    flex: 0 0 80%;                     /* each card takes 80% of viewport */
+    margin: 0 10%;                     /* 10% margin on either side for breathing room */
+    scroll-snap-align: center;         /* center each card in view */
+    width: 80%;                        /* match the flex-basis */
+  }
+}
