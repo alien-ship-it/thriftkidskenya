@@ -319,13 +319,33 @@ footer {
   height: 24px;
   vertical-align: middle;
 }
-/* Footer copyright note */
-.footer-note {
-  text-align: center;
-  color: #ccc;
-  font-size: 0.9rem;
-  padding: 1rem 0;
+
+/* Footer built-by credit */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
 }
+
+.footer-container .built-by {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.footer-container .built-by a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.footer-container .built-by a:hover {
+  text-decoration: underline;
+}
+/* Footer text: unify font size */
+.footer-container > p {
+  font-size: 0.85rem;
+}
+
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
