@@ -1161,3 +1161,25 @@ body {
     width: 80%;                        /* match the flex-basis */
   }
 }
+
+/* Homepage carousel: 6 cards exactly on desktop, no peek-in */
+@media (min-width: 992px) {
+  .product-carousel {
+    display: flex;
+    overflow-x: hidden;       /* hide any overflow */
+    scroll-snap-type: none;    /* disable mobile snapping on desktop */
+    gap: 1rem;                 /* consistent gutter */
+  }
+
+  .product-carousel .product-card {
+    /* Each card takes (100% container width - 5 gaps) / 6 */
+    flex: 0 0 calc((100% - 5rem) / 6);
+    width:    calc((100% - 5rem) / 6);
+    margin: 0;                 /* no extra margins */
+  }
+
+  /* Hide the scrollbars if needed */
+  .product-carousel::-webkit-scrollbar {
+    display: none;
+  }
+}
