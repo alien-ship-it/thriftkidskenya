@@ -1,3 +1,7 @@
+/* Reset all text decorations */
+body, body * {
+  text-decoration: none !important;
+}
 
 /* Reset */
 * {
@@ -15,6 +19,9 @@ body {
   background-position: top center; 
   background-size: cover;
   background-attachment: fixed;
+}
+body {
+  overflow-x: hidden;
 }
 
 /* HEADER LAYOUT */
@@ -78,17 +85,29 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
- background: rgba(255, 255, 255, 0.5); 
+  background: rgba(255, 255, 255, 0.5); 
 }
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: initial; /* ✅ Add this line */
+}
+
 .hero-content h1 {
   font-size: 3.2rem;
   color: #007BFF;
 }
+
 .hero-content .subheading {
   font-size: 1.2rem;
   color: #000;
   margin: 0.5rem 0 1.5rem;
 }
+
 .btn-shop {
   background-color: #ff69b4;
   color: #fff;
@@ -96,12 +115,6 @@ header {
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-}
-
-/* All other sections semi‑transparent */
-section {
-  padding: 4rem 2rem;
-   background: rgba(255, 255, 255, 0.3);
 }
 
 /* Section titles */
@@ -264,6 +277,16 @@ footer {
   color: #fff;
   padding: 2rem;
 }
+footer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -460,8 +483,8 @@ footer {
 /* Scoped under shop-page */
 .shop-page .product-grid {
   display: grid;
-  /* Always attempt 3 columns of at least 220px, then fill */
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+   grid-auto-flow: dense; /* pack items into available slots */
   gap: 1.5rem;
 }
 
@@ -591,6 +614,16 @@ footer {
     max-width: 100%;
   }
 }
+@media (max-width: 1024px) {
+  .shop-page .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .shop-page .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* SHOP‑PAGE ONLY: Load More styling */
 .shop-page .load-more-container {
@@ -612,25 +645,36 @@ footer {
 .shop-page #loadMoreBtn:hover {
   background-color: #e60073;
 }
-
-
-.cart-icon {
-  position: relative;
-  font-size: 1.2rem;
-}
+/*cart icon*/
 .cart-icon a {
   text-decoration: none;
   color: #007BFF;
 }
-#cart-count {
+.cart-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-icon #cart-count {
   position: absolute;
-  top: -8px;
-  right: -12px;
+  top: -6px;
+  right: -10px;
   background: #ff69b4;
-  color: white;
+  color: #fff;
   border-radius: 50%;
   padding: 2px 6px;
   font-size: 0.75rem;
+  line-height: 1;
+}
+
+.cart-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+  padding: 0 10px;
 }
 
 /* Cart table styling */
@@ -658,13 +702,20 @@ footer {
   object-fit: cover;
 }
 .remove-btn {
-  background: #dc3545;
-  color: #fff;
+  max-width: 100%;
+  width: auto;
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #ff4d4d;
+  color: white;
   border: none;
-  padding: 0.3rem 0.6rem;
   border-radius: 4px;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .remove-btn:hover {
   background: #c82333;
 }
@@ -761,56 +812,6 @@ a.btn-view:hover, a.view-btn:hover {
   align-self: flex-start;
 }
 
-
-
-/* Contact Section */
-.contact-section {
-  background-color: rgba(255, 255, 255, 0.6); /* was 0.9 */
-  padding: 3rem 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-.contact-container {
-  width: 100%;
-  max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.65); /* was 0.85 */
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-}
-
-.contact-form label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: 600;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.75rem;
-  margin-top: 0.25rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-.submit-btn {
-  margin-top: 1.5rem;
-  padding: 0.75rem 2rem;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.submit-btn:hover {
-  background-color: #555;
-}
-
 /* Scroll animation */
 .scroll-fade {
   opacity: 0;
@@ -821,4 +822,320 @@ a.btn-view:hover, a.view-btn:hover {
 .scroll-fade.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* 1) Make only the table scroll horizontally, not the whole page */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  margin-bottom: 1rem;
+}
+
+/* 2) Ensure the table itself flexes but doesn't force the body to scroll */
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;  /* columns size to content */
+  min-width: 100%;     /* at least as wide as wrapper */
+}
+
+/* 3) Let cell content wrap instead of overflowing */
+.table-wrapper th,
+.table-wrapper td {
+  padding: 0.5rem;
+  word-break: break-word;
+  white-space: normal;
+}
+
+/* 4) Tweak the Remove button so it never overflows its cell */
+.remove-btn {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+/* 5) Block global horizontal scroll to keep footer in place */
+body {
+  overflow-x: hidden;
+}
+/* Prevent table cell text from breaking into vertical stacks */
+.table-wrapper th,
+.table-wrapper td {
+  white-space: nowrap !important;   /* keep text on one line */
+  word-break: normal !important;    /* don’t break words/strings */
+}
+
+.cart-icon .icon-cart {
+  width: 1.6rem;             /* 24px */
+  height: 1.6rem;
+  color: #333;               /* icon color */
+}
+
+#cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #ff69b4;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.cart-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: #000;
+}
+
+.navbar .cart-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  z-index: 10;
+  font-size: 1.2rem;
+}
+
+/* Global section spacing */
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Tweak footer spacing so it doesn’t butt up against the last section */
+footer {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+/* Hero-only: stack title, subheading, and button vertically */
+.hero-content {
+  font-size: initial !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+/* === Hero Stack: Force vertical layout with no conflict === */
+.hero-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1.5rem !important;  /* adjust spacing between lines */
+}
+
+/* Kill underlines on non-link text */
+.hero-content h1,
+.hero-content .subheading,
+.shop-section h2,          /* or whatever selector covers "Shop All Products" */
+.shop-page .category-filter h3, /* or your filter title selector */
+.product-detail h1,
+.contact-section h1 {
+  text-decoration: none !important;
+}
+
+/* ==================== */
+/* Base & Container     */
+/* ==================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ==================== */
+/* Header & Nav         */
+/* ==================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 2px solid #eee;
+}
+.site-header .logo {
+  font-size: 1.5rem;
+  color: #0077cc;
+  text-decoration: none;
+}
+.site-nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #555;
+}
+.site-nav a.active,
+.site-nav a:hover {
+  color: #0077cc;
+}
+
+/* ==================== */
+/* About Page Styles    */
+/* ==================== */
+.about-hero {
+  background: #f0f8ff;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+.about-hero h1 {
+  font-size: 2.5rem;
+  color: #0077cc;
+  margin-bottom: 0.5rem;
+}
+.about-hero p {
+  font-size: 1.1rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+.about-text h2 {
+  font-size: 1.75rem;
+  color: #0077cc;
+  margin-bottom: 0.5rem;
+}
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+/* ===== Shared Page-Hero Styling ===== */
+/* Streamlined Hero — no absolute overlay */
+.page-hero {
+  position: relative;
+  background: url('css/hero-bg.jpg') center/cover no-repeat;
+  /* Remove fixed 100vh: let content define height */
+  min-height: 50vh;               /* hero takes half the viewport */
+  display: flex;
+  align-items: center;            /* vertical center just the hero area */
+  justify-content: center;
+  padding: 4rem 1rem;             /* space above/below hero */
+  overflow: hidden;               /* don’t let child backgrounds spill */
+}
+
+.page-hero .overlay {
+  /* Change from absolute inset:0 to relative block */
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  /* Let the overlay grow with its content */
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.page-hero .page-container {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  background-color:  rgba(255, 255, 255, 0.6);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* About image */
+.about-img {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Highlighted quote */
+.highlighted-quote {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #e91e63;
+  border-left: 4px solid #007BFF;
+  padding-left: 1rem;
+}
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.contact-form label {
+  font-weight: 600;
+  text-align: left;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.contact-form .btn-shop {
+  align-self: center;
+  margin-top: 1rem;
+}
+/* Main content under hero */
+.about-content,
+.contact-content {
+  padding: 4rem 1rem;
+  background-color:  rgba(255, 255, 255, 0.6);
+}
+
+.about-content .page-container,
+.contact-content .page-container {
+  max-width: 800px;
+  margin: auto;
+}
+/* Center About & Contact content on desktop */
+.about-content .page-container,
+.contact-content .page-container {
+  max-width: 800px;     /* or whatever width you prefer */
+  margin: 0 auto;       /* auto-center horizontally */
+  text-align: center;   /* optional: center the text */
+}
+/* Constrain the about section image */
+.about-content .about-img {
+  max-width: 100%;       /* never exceed its container */
+  width: 100%;           /* fill container */
+  height: auto;          /* preserve aspect ratio */
+  max-width: 400px;      /* cap to 600px on desktop */
+  margin: 2rem auto 0;   /* top spacing, center horizontally */
+  display: block;        /* needed for auto margins to center */
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .page-hero {
+    padding-top: 3rem;
+  }
+  .page-hero .page-container {
+    padding: 1.5rem;
+  }
 }

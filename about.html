@@ -3,95 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Thrift Kids Kenya</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <style>
-
-    .about-container {
-      max-width: 800px;
-      background-color: rgba(255, 255, 255, 0.65);
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-      text-align: center;
-    }
-
-    .about-container h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-
-    .about-container p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #444;
-      margin-bottom: 1.5rem;
-    }
-
-    .highlighted-quote {
-      font-style: italic;
-      font-weight: bold;
-      color: #555;
-      border-left: 4px solid #0077cc;
-      padding-left: 1rem;
-    }
-
-    .about-img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-top: 2rem;
-    }
-  </style>
+  <title>About | ThriftKids Kenya</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
 <body>
 
-  <!-- Navbar -->
-<header>
-  <div class="header-container">
+  <!-- NAVBAR -->
+  <header class="header-container">
     <div class="logo">ThriftKids Kenya</div>
     <nav class="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html" class="active">Shop</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <!-- Cart Icon -->
-    <div class="cart-icon">
-      <a href="cart.html">
-        🛒 <span id="cart-count">0</span>
-      </a>
-    </div>
-  </div>
-</header>
+    <a href="cart.html" class="cart-icon">
+      <!-- inline SVG cart -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon-cart" viewBox="0 0 24 24">
+        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.2 6M7 13h14M17 19a2 2 0 11-4 0 2 2 0 014 0zm-8 0a2 2 0 11-4 0 2 2 0 014 0z"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span id="cart-count">0</span>
+    </a>
+  </header>
 
-  <!-- About Section -->
-  <section class="about-hero">
-    <div class="about-container" data-aos="fade-up">
-      <h1>About Thrift Kids Kenya</h1>
-      <p>
-        Thrift Kids Kenya is a trendy online thrift store focused on stylish and affordable clothing for babies, children, and teens. Our goal is simple — help parents dress their kids in quality, cute, and budget-friendly outfits.
-      </p>
-      <p>
-        Whether you're shopping for a birthday, everyday wear, or something unique, we've got you covered. Our curated collection blends urban streetwear with playful charm, and most of our pieces are sourced with love and care.
-      </p>
-      <p>
-        We’re not just about clothes — we’re about confidence, creativity, and conscious fashion. Every piece you buy supports sustainability by giving pre-loved outfits a new home.
-      </p>
-      <p class="highlighted-quote">
-        “Dressing up your little ones shouldn't cost a fortune — it should spark joy.”
-      </p>
-      <img src="images/about.jpg" alt="Kids Fashion" class="about-img" data-aos="fade-up" data-aos-delay="200"/>
+  <!-- HERO -->
+  <!-- Only the intro lives in the hero -->
+  <section class="about-content">
+    <div class="overlay">
+      <div class="page-container" data-aos="fade-up">
+        <h1>About ThriftKids Kenya</h1>
+        <p>
+          Thrift Kids Kenya is a trendy online thrift store focused on stylish and affordable clothing for babies, children, and teens. Our goal is simple — help parents dress their kids in quality, cute, and budget-friendly outfits.
+        </p>
+        <p>
+          Whether you're shopping for a birthday, everyday wear, or something unique, we've got you covered. Our curated collection blends urban streetwear with playful charm, and most of our pieces are sourced with love and care.
+        </p>
+        <p>
+          We’re not just about clothes — we’re about confidence, creativity, and conscious fashion. Every piece you buy supports sustainability by giving pre-loved outfits a new home.
+        </p>
+        <p class="highlighted-quote">
+          “Dressing up your little ones shouldn't cost a fortune — it should spark joy.”
+        </p>
+        <img src="images/about.jpg" alt="Kids Fashion" class="about-img" data-aos="fade-up" data-aos-delay="200"/>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
   <div class="footer-content">
     <div class="quick-links">
@@ -133,11 +95,11 @@
   </div>
 </footer>
 
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
-
-   <script src="js/cart.js"></script>
-   
+  <script src="js/cart.js"></script>
 </body>
 </html>

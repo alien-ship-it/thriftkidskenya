@@ -1,62 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Thrift Kids Kenya</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | ThriftKids Kenya</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-  <div class="header-container">
+
+  <!-- NAVBAR -->
+  <header class="header-container">
     <div class="logo">ThriftKids Kenya</div>
     <nav class="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="shop.html">Shop</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
-    <!-- Cart Icon -->
-    <div class="cart-icon">
-      <a href="cart.html">
-        🛒 <span id="cart-count">0</span>
-      </a>
-    </div>
-  </div>
-</header>
-  <!-- Hero Section -->
-  <section class="hero-section contact-hero">
+    <a href="cart.html" class="cart-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon-cart" viewBox="0 0 24 24">
+        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.2 6M7 13h14M17 19a2 2 0 11-4 0 2 2 0 014 0zm-8 0a2 2 0 11-4 0 2 2 0 014 0z"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span id="cart-count">0</span>
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <section class="contact-content">
     <div class="overlay">
-      <h1>Contact Us</h1>
-      <p>We’d love to hear from you!</p>
+      <div class="page-container" data-aos="fade-up">
+        <h1>Contact Us</h1>
+        <p>We’d love to hear from you!</p>
+        <form class="contact-form" action="#" method="POST">
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Subject
+            <input type="text" name="subject"/>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button type="submit" class="btn-shop">Send Message</button>
+        </form>
+      </div>
     </div>
   </section>
 
-  <!-- Contact Form Section -->
-  <section class="contact-section scroll-fade">
-    <div class="contact-container">
-      <form class="contact-form" action="#" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" />
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit" class="submit-btn">Send Message</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer (optional) -->
+  <!-- FOOTER -->
   <footer>
   <div class="footer-content">
     <div class="quick-links">
@@ -97,21 +98,12 @@
     &copy; 2025 ThriftKids Kenya. All rights reserved.
   </div>
 </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Scroll fade animation
-    const elements = document.querySelectorAll('.scroll-fade');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
-
-    elements.forEach(el => observer.observe(el));
+    AOS.init();
   </script>
-
   <script src="js/cart.js"></script>
-
 </body>
 </html>

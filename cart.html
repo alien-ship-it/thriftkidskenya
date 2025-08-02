@@ -42,7 +42,18 @@
         </ul>
       </nav>
       <div class="cart-icon">
-        🛒 <span id="cart-count">0</span>
+        <a href="cart.html" class="cart-icon">
+         <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon-cart"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          role="img"
+         >
+          <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.2 6M7 13h14M17 19a2 2 0 11-4 0 2 2 0 014 0zm-8 0a2 2 0 11-4 0 2 2 0 014 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+         <span id="cart-count">0</span>
+        </a>
       </div>
     </div>
   </header>
@@ -51,7 +62,8 @@
   <section class="product-detail">
     <div class="container">
       <h1>Your Shopping Cart</h1>
-      <table id="cart-table">
+      <div class="table-wrapper">
+       <table id="cart-table">
         <thead>
           <tr>
             <th>Product</th>
@@ -71,7 +83,8 @@
             <td></td>
           </tr>
         </tfoot>
-      </table>
+       </table>
+      </div>
       <div style="margin-top: 2rem; text-align: center;">
         <button id="checkout-btn" class="view-btn">Proceed to Checkout</button>
       </div>
